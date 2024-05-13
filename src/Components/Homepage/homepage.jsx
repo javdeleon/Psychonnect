@@ -1,9 +1,11 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import "./homepage.css";
 
-function homepage() {
+import pic1 from "../Assets/pic1.jpg";
+import pic2 from "../Assets/pic2.jpg";
+
+function Homepage() {
   return (
     <div>
       <Nav />
@@ -11,13 +13,13 @@ function homepage() {
         <div className="container__left">
           <h1>Psychonnect, there is a connection.</h1>
           <div className="container__btn">
-            <button className="btn">START SHORT ASSESSMENT</button>
+            <Link to="/assessment" className="btn">START SHORT ASSESSMENT</Link>
           </div>
         </div>
         <div className="container__right">
           <div className="images">
-            <img src="assets/pic1.jpg" alt="pic-1" className="pic-1" />
-            <img src="assets/pic2.jpg" alt="pic-2" className="pic-2" />
+            <img src={pic1} alt="pic-1" className="pic-1" />
+            <img src={pic2} alt="pic-2" className="pic-2" />
           </div>
           <div className="content">
             <h2>In Psychonnect,</h2>
@@ -56,22 +58,22 @@ function Nav() {
     <nav>
       <div className="nav__header">
         <div className="nav__logo">
-          <a href="#">Psychonnect</a>
+          <Link to="/">Psychonnect</Link>
         </div>
         <div className="nav__menu__btn" id="menu-btn">
           <i className="ri-menu-line"></i>
         </div>
       </div>
       <ul className="nav__links" id="nav-links">
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">ABOUT US</a></li>
-        <li><a href="#">CONTACT US</a></li>
+        <li><Link to="/">HOME</Link></li>
+        <li><Link to="/about">ABOUT US</Link></li>
+        <li><Link to="/contact">CONTACT US</Link></li>
       </ul>
       <div className="nav__links" id="nav-links">
-        <li><a className="btn"  href="login.html">GET STARTED</a></li>
+        <li><Link className="btn" to="/login">GET STARTED</Link></li>
       </div>
     </nav>
   );
 }
 
-export default homepage;
+export default Homepage;
